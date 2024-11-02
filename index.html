@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sementinha</title>
+    <link rel="icon" type="image/png" href="images/logo-sementinha/Logo Sementinha - Branco 1.png">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+           <a href="/index.html"><img src="images/logo-sementinha/Logo Sementinha - Verde 2.png" alt="Sementinha Escola e Creche Logo"></a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="/index.html">Sementinha</a></li>
+                <li><a href="/site/sementinha.html">Nossa Escola</a></li>
+                <li><a href="/site/projetos.html">Projetos</a></li>
+                <li><a href="/site/instalacoes.html">Instalações</a></li>
+                <li><a href="/site/contato.html">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776;
+            </div>
+        </nav>
+    </header>
+
+    <!-- Overlay menu -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-menu">
+            <ul class="overlay-menu-items">
+                <li><a href="/index.html">Sementinha</a></li>
+                <li><a href="/site/sementinha.html">Nossa Escola</a></li>
+                <li><a href="/site/projetos.html">Projetos</a></li>
+                <li><a href="/site/instalacoes.html">Instalações</a></li>
+                <li><a href="/site/contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+            
+    <main>
+        <section class="banner">
+            <!-- Primeiro Carrossel -->
+            <div class="carousel" id="carousel1">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <picture>
+                            <!-- Imagem para telas menores -->
+                            <source media="(max-width: 700px)" srcset="images/banner/m1.png">
+                            <!-- Imagem padrão para telas maiores -->
+                            <img src="images/banner/d1.png" alt="Banner da escola Sementinha">
+                        </picture>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <picture>
+                        <source media="(max-width: 700px)" srcset="images/banner/m2.png">
+                        <img src="images/banner/d2.png" alt="Banner da escola Sementinha">
+                    </picture>
+                </div>
+                <div class="carousel-item">
+                    <picture>
+                        <source media="(max-width: 700px)" srcset="images/banner/m3.png">
+                        <img src="images/banner/d3.png" alt="Banner da escola Sementinha">
+                    </picture>
+                </div>
+    
+                <!-- Controles do Carrossel -->
+                <div class="carousel-controls">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+    
+                <!-- Indicadores (bolinhas) -->
+                <div class="carousel-indicators">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Seção de Níveis Educacionais abaixo do Banner -->
+    <section id="educacao-niveis">
+        <div class="container">
+            <div class="nivel-grid">
+                <!-- Período Integral -->
+                <div class="nivel-item">
+                    <a href="/turmas/periodo-integral.html"><img src="images/fotos/integral.png" alt="Período Integral" class="nivel-icon" />
+                    <h3>Período Integral</h3></a>
+                </div>
+
+                <!-- Educação Infantil -->
+                <div class="nivel-item">
+                    <a href="/turmas/educacao-infantil.html"><img src="images/fotos/infantil.png" alt="Educação Infantil" class="nivel-icon" />
+                    <h3>Educação Infantil</h3></a>
+                </div>
+
+                <!-- Ensino Fundamental -->
+                <div class="nivel-item">
+                    <a href="/turmas/ensino-fundamental.html"><img src="images/fotos/fundamental.png" alt="Ensino Fundamental" class="nivel-icon" />
+                    <h3>Ensino Fundamental</h3></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Diferenciais -->
+    <section id="diferenciais">
+        <div class="container">
+            <h2 class="section-title"><b>Diferenciais</b></h2>
+            <p class="section-subtitle">Soluções educacionais integradas com produtos e serviços voltados ao desenvolvimento dos alunos.</p>
+            
+            <div class="diferenciais-grid">
+                <a href="/diferenciais/agenda-eletronica.html" class="diferencial-item">
+                    <h3>Agenda Eletrônica</h3>
+                    <p>Aplicativo para comunicação entre pais, professores e escola. A solução definitiva para o acompanhamento diário da vida escolar.</p>
+                </a>
+                <a href="/diferenciais/plataforma-digital.html" class="diferencial-item">
+                    <h3>Plataforma Digital</h3>
+                    <p>Uma plataforma virtual com tecnologias e recursos para potencializar o aprendizado e interação com gestores, professores e pais.</p>
+                </a>
+                <a href="/diferenciais/livro-digital.html" class="diferencial-item">
+                    <h3>Livro Digital</h3>
+                    <p>Material integrado com uma série de recursos que visam ampliar o conhecimento e o aprendizado do aluno.</p>
+                </a>
+                <a href="/diferenciais/sistema-positivo.html" class="diferencial-item">
+                    <h3>Sistema Positivo</h3>
+                    <p>O aluno é protagonista de seu processo de aprendizagem, sendo continuamente estimulado a refletir e a questionar.</p>
+                </a>
+                <a href="/diferenciais/bem-estar.html" class="diferencial-item">
+                    <h3>Bem-Estar</h3>
+                    <p>•Arte<br>•Culinária<br>•Dança<br>•Fonoaudióloga<br>•Nutricionista<br>•Psicóloga</p>
+                </a>
+                <a href="/diferenciais/atividades-academicas.html" class="diferencial-item">
+                    <h3>Atividades Acadêmicas</h3>
+                    <p>•Informática<br>•Programa Bilíngue<br>•Robótica</p>
+                </a>
+                <a href="/diferenciais/atividades-extracurriculares.html" class="diferencial-item">
+                    <h3>Atividades Extracurricular</h3>
+                    <p>•Ballet<br>•Futsal<br>•Piscina</p>
+                </a>
+                <a href="/diferenciais/seguranca.html" class="diferencial-item">
+                    <h3>Segurança</h3>
+                    <p>Temos tudo o que seu filho precisa em um espaço com recursos preventivos e um ambiente agradável e seguro. Fique tranquilo.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossos Valores -->
+    <section id="nossos-valores">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna esquerda (texto) -->
+                <div class="col-left">
+                    <h2><b>Nossa Missão</b></h2>
+                    <p>Acreditamos na importância de uma educação baseada em respeito, ética, e valorização da família. Cada aluno é estimulado a desenvolver suas habilidades em um ambiente acolhedor e seguro.</p>
+                    <a href="/site/missao.html" class="btn-leia-mais">Leia mais</a>
+                </div>
+                <!-- Coluna direita (imagem) -->
+                <div class="col-right">
+                    <img src="images/fotos/nossa-missao.png" alt="Imagem de Valores" class="valores-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Você Sabia? -->
+    <section id="voce-sabia">
+        <div class="container">
+            <h2 class="section-title"><b>Você sabia?</b></h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="47">0</span>
+                    <p>Anos de Tradição</p>
+                    <p>Mais de quatro décadas de dedicação ao ensino em nossa região.</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15000">0</span>
+                    <p>Crianças</p>
+                    <p>Desde o início, formamos cerca de 15.000 crianças com carinho e dedicação.</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0%</span> <!-- Adicionando símbolo de % -->
+                    <p>Pais Satisfeitos</p>
+                    <p>Todo responsável está plenamente satisfeito com nosso trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossas Parcerias -->
+    <section class="parcerias">
+        <h2><b>Nossas Parcerias</b></h2>
+        <div class="parcerias-carousel">
+            <a href="https://www.clipescola.com"><img src="images/parcerias/clipescola.png" alt="ClipEscola"></a>
+            <a href="https://www.lego.com/pt-pt/categories/robots-for-kids?age-gate=grown_up"><img src="images/parcerias/lego.png" alt="Lego Robótica"></a>
+            <a href="https://www.sistemapositivo.com.br"><img src="images/parcerias/positivo.png" alt="Positivo"></a>
+            <a href="https://www.arvore.com.br"><img src="images/parcerias/arvore.png" alt="Positivo"></a>
+            <a href="https://www.pesenglish.com.br"><img src="images/parcerias/pes.png" alt="Positivo"></a>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section id="depoimentos">
+        <div class="container">
+            <h2 class="section-title"><b>Depoimentos</b></h2>
+            <div class="testimonial">
+                <p class="testimonial-quote">
+                    <span class="quote-icon">❝</span>
+                    Tenho um imenso orgulho de ter estudado nesta escola. É gratificante ver que meus filhos seguem a mesma trajetória.
+                    <span class="quote-icon">❞</span>
+                </p>
+                <p class="testimonial-author">
+                    Cristina Young, mãe do aluno Luccas Young 2º ano tarde e ex-aluno Fellipe Marcos Young
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão do Whatsapp -->
+    <a href="https://wa.me/5521969462314" class="whatsapp-button" target="_blank">
+        <img src="images/logos/whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
+    <!-- Mapa -->
+    <div class="map-container">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.9090559622194!2d-43.30400658419575!3d-22.782264828954332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997a9166c46807%3A0x2fb5bb8ac6689ffc!2sSementinha%20-%20Escola%20e%20Creche!5e0!3m2!1spt-BR!2sbr&z=5" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+        </iframe>
+    </div>
+
+
+    <!-- Roda Pé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <ul>
+                    <li>&#160</li>
+                    <li><a href="/site/sementinha.html">Conheça a Sementinha</a></li>
+                    <li><a href="mailto:diretor@escolasementinha.com.br">diretor@escolasementinha.com.br</a></li>
+                    <li><a href="/site/privacidade.html">Política de Privacidade</a></li>
+                    <li>&#160</li>
+                </ul>
+            </div>
+            <div class="footer-logo">
+                <img src="/images/logo-sementinha/Logo Sementinha - Verde 1.png" alt="Logo Sementinha">
+            </div>
+            <div class="footer-socials">
+                <ul>
+                    <li><a href="tel:02126731812"><img src="/images/logos/logo-telefone.png" alt="telefone"></a></li>
+                    <li><a href="https://www.facebook.com/escolaecrechesementinha/"><img src="/images/logos/logo-facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://www.youtube.com/@EscolaeCrecheSementinha/videos"><img src="/images/logos/logo-youtube.png" alt="YouTube"></a></li>
+                    <li><a href="https://www.instagram.com/escolaecrechesementinha/"><img src="/images/logos/logo-instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Rua Doutor Gastão Reis, 67, Parque Pauliceia. Duque de Caxias - RJ • CEP 25080-040</p>
+            <p>&copy; 2024 Sementinha Escola e Creche</p>
+        </div>
+    </footer>
+</body>
+</html>

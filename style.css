@@ -1,0 +1,838 @@
+
+/* Paleta de cores */
+:root {
+    --verde-principal: #076633;
+    --verde-secundario: #0b8e36;
+    --verde-claro: #3aaa35;
+    --laranja: #F39200;
+    --azul-header-footer: #002855;
+    --azul-texto: #00467f;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+    --cinza-texto: #666666;
+}
+
+/* Reset de margin e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Usar Montserrat para os títulos */
+}
+
+h2{
+    font-weight: 900;
+}
+
+a{
+  text-decoration: none;  
+}
+
+/* Header fixo */
+/* Estilos gerais do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: var(--cinza-claro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo img {
+    width: 220px;
+}
+
+/* Navbar para telas grandes */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--verde-principal);
+}
+
+/* Menu Toggle - só aparece no mobile */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* Não exibe o overlay por padrão */
+    position: fixed;
+    top: 75px; /* Começa logo abaixo do header */
+    right: 0;
+    width: 60%;
+    height: calc(100% - 60px); /* 100% da altura menos o header */
+    background-color: var(--cinza-claro);
+    z-index: 9999;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu dentro do overlay */
+.overlay-menu {
+    background-color: var(--cinza-claro);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay-menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.overlay-menu-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.overlay-menu-items li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsividade para telas menores (max-width 768px) */
+@media (max-width: 850px) {
+    nav ul {
+        display: none; /* Esconde o menu original em telas pequenas */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o ícone do menu em telas pequenas */
+    }
+
+    .overlay.active {
+        display: block; /* Exibe o overlay apenas quando estiver ativo */
+    }
+
+    /* Corrige o layout para que o banner comece logo abaixo do header */
+    .banner {
+        margin-top: 80px; /* Ajusta o conteúdo para começar após o header */
+    }
+}
+
+/* Para telas maiores (desktop), o overlay é sempre oculto */
+@media (min-width: 769px) {
+    .overlay {
+        display: none; /* Certifica-se que o overlay está sempre escondido */
+    }
+}
+
+/* Estilos gerais para o banner */
+.banner {
+    position: relative;
+    text-align: center;
+    background-color: #2d71b8;
+    color: white;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 75px;
+}
+
+/* Estilos gerais para o banner */
+.banner {
+    position: relative;
+    text-align: center;
+    background-color: #2d71b8;
+    color: white;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 75px;
+}
+
+/* Estilos para o container do carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 390px; /* Altura fixa para desktop */
+    max-width: 100%; /* Garantir que a largura ocupe 100% */
+}
+
+/* Estilos para os itens do carousel */
+.carousel-item {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos para as imagens dentro do carousel */
+.carousel img, 
+.carousel picture {
+    position: absolute; /* Altera para absolute */
+    top: 50%; /* Alinha ao centro verticalmente */
+    left: 50%; /* Alinha ao centro horizontalmente */
+    min-width: 100%; /* Garante que a largura mínima seja 100% */
+    min-height: 100%; /* Garante que a altura mínima seja 100% */
+    width: auto; /* Permite que a largura seja ajustada */
+    height: auto; /* Permite que a altura seja ajustada */
+    transform: translate(-50%, -50%); /* Centraliza a imagem no meio do container */
+    object-fit: cover; /* Faz a imagem preencher o container do banner */
+}
+
+/* Estilos gerais para o banner */
+.banner {
+    position: relative;
+    text-align: center;
+    background-color: #2d71b8;
+    color: white;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 75px;
+}
+
+/* Estilos para o container do carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 390px; /* Altura fixa para desktop */
+    max-width: 100%; /* Garantir que a largura ocupe 100% */
+}
+
+/* Estilos para os itens do carousel */
+.carousel-item {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos para as imagens dentro do carousel */
+.carousel img, 
+.carousel picture {
+    position: absolute; /* Alinha a imagem de forma absoluta */
+    top: 50%; /* Alinha ao centro verticalmente */
+    left: 50%; /* Alinha ao centro horizontalmente */
+    min-width: 100%; /* Garante que a largura mínima seja 100% */
+    min-height: 100%; /* Garante que a altura mínima seja 100% */
+    width: auto; /* Permite que a largura seja ajustada */
+    height: auto; /* Permite que a altura seja ajustada */
+    transform: translate(-50%, -50%); /* Centraliza a imagem no meio do container */
+    object-fit: cover; /* Faz a imagem preencher o container do banner */
+}
+
+/* Estilos para os controles do carousel */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* Indicadores do Carrossel (bolinhas) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-indicators .dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%; /* Deixa as bolinhas perfeitamente redondas */
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .dot.active {
+    background-color: white;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 700px) {
+    .carousel {
+        height: 300px; /* Altura fixa para mobile */
+    }
+
+    .carousel img, 
+    .carousel picture {
+        min-width: 100%; /* Garante que a largura mínima seja 100% */
+        min-height: 100%; /* Garante que a altura mínima seja 100% */
+        width: auto; /* Permite que a largura seja ajustada */
+        height: auto; /* Permite que a altura seja ajustada */
+    }
+}
+
+/*EDUCAÇÃO NIVEIS*/
+
+#educacao-niveis {
+    background: linear-gradient(135deg, var(--verde-claro), var(--verde-principal));
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nivel-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nivel-item {
+    text-align: center;
+    flex: 1 1 30%; /* Ajuste de tamanho para que ocupe 30% da largura */
+    margin: 10px;
+}
+
+.nivel-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nivel-item h3 {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.nivel-icon:hover {
+    transform: scale(1.2); /* Efeito hover */
+}
+/* Responsividade para dispositivos móveis */
+@media (max-width: 1100px) {
+    .nivel-grid {
+        flex-direction: row; /* Garante que os itens fiquem na mesma linha */
+        justify-content: space-evenly; /* Espaçamento igual entre os itens */
+    }
+
+    .nivel-item {
+        flex: 1 1 30%; /* Mantém os itens com 30% da largura */
+        margin: 5px; /* Ajusta o espaçamento para telas menores */
+    }
+
+    .nivel-icon {
+        width: 80px; /* Ícones menores em telas pequenas */
+        height: 80px;
+    }
+
+    .nivel-item h3 {
+        font-size: 15px; /* Texto um pouco menor em telas pequenas */
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .nivel-grid {
+        flex-direction: row; /* Garante que os itens fiquem na mesma linha */
+        justify-content: space-evenly; /* Espaçamento igual entre os itens */
+    }
+
+    .nivel-item {
+        flex: 1 1 30%; /* Mantém os itens com 30% da largura */
+        margin: 5px; /* Ajusta o espaçamento para telas menores */
+    }
+
+    .nivel-icon {
+        width: 80px; /* Ícones menores em telas pequenas */
+        height: 80px;
+    }
+
+    .nivel-item h3 {
+        font-size: 15px; /* Texto um pouco menor em telas pequenas */
+    }
+}
+
+/* Seção Diferenciais */
+#diferenciais {
+    padding: 30px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#diferenciais .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Margem interna igual às outras seções */
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.diferencial-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: transform 0.3s, color 0.3s; /* Transições suaves para transformações e cor */
+}
+
+.diferencial-item h3 {
+    font-size: 20px;
+    color: var(--verde-secundario);
+    margin-bottom: 15px;
+}
+
+.diferencial-item p {
+    color: #666;
+}
+
+/* Estilos ao passar o mouse */
+.diferencial-item:hover {
+    color: var(--verde-principal); /* Altere para a cor verde principal */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do contêiner */
+}
+
+.diferencial-item:hover h3 {
+    color: var(--laranja); /* Muda a cor do título para verde principal ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .diferenciais-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Seção "Nossos Valores" */
+#nossos-valores {
+    padding: 40px 20px;
+    background-color: var(--cinza-claro); /* Cor de fundo para diferenciar */
+}
+
+#nossos-valores .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#nossos-valores .row {
+    display: flex;
+    justify-content: space-between; /* Alinha a imagem à esquerda e o conteúdo à direita */
+    align-items: center;
+    gap: 20px;
+}
+
+/* Coluna esquerda (texto) */
+.col-left {
+    flex: 1;
+    text-align: left;
+}
+
+.col-left h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.col-left p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.col-left .btn-leia-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--laranja);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.col-left .btn-leia-mais:hover {
+    background-color: var(--verde-secundario);
+}
+
+/* Coluna direita (imagem) */
+.col-right {
+    flex: 1;
+    text-align: left;
+}
+
+.col-right img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível na coluna */
+    max-width: 400px; /* Limita o tamanho máximo da imagem */
+    border-radius: 10px;
+    margin-left: 20px; /* Adiciona espaçamento à esquerda da imagem */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #nossos-valores .row {
+        flex-direction: column; /* Alinha a imagem e conteúdo verticalmente */
+        text-align: center;
+    }
+
+    .col-right img {
+        max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+        margin: 0;
+    }
+
+    .col-left {
+        text-align: center;
+    }
+
+    .col-left h2 {
+        font-size: 1.8rem;
+    }
+
+    .col-left p {
+        font-size: 1rem;
+    }
+}
+
+/* Seção "Você sabia?" */
+#voce-sabia {
+    background-color: var(--verde-secundario);
+    padding: 40px 20px; /* Margem interna para o conteúdo */
+}
+
+#voce-sabia .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#voce-sabia h2.section-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 2.5rem; /* Ajuste o tamanho conforme necessário */
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Espaço entre os itens */
+}
+
+/* Estiliza cada item */
+.stat-item {
+    flex: 1 1 calc(25% - 20px); /* 4 colunas em telas grandes */
+    text-align: center;
+    color: #ffffff; /* Ajusta a cor do texto */
+    font-size: 1.5rem; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.stat-item p {
+    margin-top: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .stat-item {
+        flex: 1 1 100%; /* Coluna única em telas menores */
+    }
+}
+
+/* Estilos adicionais, caso você precise personalizar mais o conteúdo */
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* Cor laranja destacada */
+}
+
+/* Nossas Parcerias */
+.parcerias {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.parcerias h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.parcerias-carousel {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 70px; /* Espaçamento entre os itens */
+    padding: 10px 0;
+    flex-wrap: wrap; /* Permite quebra de linha */
+}
+
+.parcerias-carousel img {
+    border-radius: 50%;
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Certifique-se de que as imagens sejam quadradas */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.parcerias-carousel a {
+    display: block;
+}
+
+.parcerias-carousel img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .parcerias-carousel {
+        gap: 20px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .parcerias-carousel a {
+        width: 45%; /* Define largura para garantir que fiquem duas imagens por linha */
+    }
+}
+
+/* Estilos da Seção Depoimentos */
+#depoimentos {
+    background-color: #FF8C42;
+    color: #fff;
+    padding: 60px 0;
+}
+
+#depoimentos .section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#depoimentos .testimonial {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#depoimentos .testimonial-quote {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+}
+
+#depoimentos .quote-icon {
+    font-size: 36px;
+    color: #fff;
+}
+
+#depoimentos .testimonial-author {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* MAPA */
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    margin: 0; /* Remove qualquer margem */
+    padding: 0; /* Remove qualquer padding */
+    overflow: hidden; /* Garante que não tenha overflow visível */
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove bordas indesejadas */
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 90px;
+    height: 90px;
+    transition: transform 0.3s ease; /* Usa transformação para um aumento uniforme */
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.22); /* Aumenta o tamanho proporcionalmente em 22% */
+}
+
+footer {
+    background-color: #002855;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espaça igualmente os elementos nas laterais */
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    position: relative;
+}
+
+.footer-links, .footer-socials {
+    flex: 1; /* Cada um ocupa o mesmo espaço nas laterais */
+}
+
+.footer-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Garante a centralização exata da logo */
+}
+
+.footer-logo img {
+    max-width: 150px; /* Limita o tamanho da logo */
+}
+
+.footer-links ul, .footer-socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li, .footer-socials ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a, .footer-socials ul li a img {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-socials ul {
+    display: flex;
+    justify-content: flex-end; /* Alinha os ícones sociais à direita */
+    gap: 15px; /* Espaço entre os ícones sociais */
+}
+
+.footer-socials ul li a img {
+    width: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza todos os elementos */
+        gap: 20px; /* Espaço entre os elementos do footer */
+    }
+
+    .footer-logo {
+        position: static; /* Remove o posicionamento absoluto */
+        transform: none; /* Remove a transformação */
+        margin-bottom: 20px; /* Adiciona espaço abaixo da logo */
+    }
+
+    .footer-socials {
+        margin-top: 0; /* Adiciona espaçamento superior */
+    }
+
+    .footer-socials ul {
+        justify-content: center; /* Centraliza os ícones sociais */
+    }
+
+    .footer-links {
+        justify-content: center; /* Centraliza os links no footer */
+    }
+}
