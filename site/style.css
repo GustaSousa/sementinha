@@ -248,11 +248,11 @@ nav ul li a:hover {
 /* Instalações */
 
 .galeria {
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
-.galeria h1 {
+.galeria h1, h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -302,6 +302,91 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* projetos */
+.projetos {
+    padding: 25px;
+    text-align: center;
+}
+
+.projetos h1, h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+.projetos-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.projetos-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.projetos-item h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: rgba(0, 128, 0, 0.7); /* Fundo verde com transparência */
+    margin: 0;
+    z-index: 2;
+}
+
+.projetos-item a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.projetos-item:hover img {
+    opacity: 0.8; /* Escurece levemente a imagem no hover */
+}
+
+.projetos-item:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
 /* WHATSAPP BUTTON */
 
 .whatsapp-button {
