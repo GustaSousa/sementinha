@@ -253,8 +253,13 @@ nav ul li a:hover {
 }
 
 .galeria h1, h2 {
-    font-size: 24px;
+    font-size: 2rem;
     margin-bottom: 20px;
+}
+
+.galeria p{
+    font-size: 1.2rem;
+    margin-bottom: 200px;
 }
 
 .galeria-container {
@@ -301,6 +306,16 @@ nav ul li a:hover {
     color: white;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+
+    .galeria h2 {
+        font-size: 1.8rem;
+    }
+
+    .galeria p {
+        font-size: 1rem;
+    }
+}
 
 /* projetos */
 .projetos {
@@ -309,7 +324,12 @@ nav ul li a:hover {
 }
 
 .projetos h1, h2 {
-    font-size: 24px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.projetos p{
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
@@ -387,6 +407,18 @@ nav ul li a:hover {
     color: white;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+    .projetos h2 {
+        font-size: 1.8rem;
+    }
+
+    .projetos p {
+        font-size: 1rem;
+    }
+}
+
 /* WHATSAPP BUTTON */
 
 .whatsapp-button {
