@@ -23,7 +23,6 @@ O site **Sementinha** foi desenvolvido para ser o principal meio de comunicaçã
 ## Tecnologias Utilizadas
 - **HTML5** e **CSS3**: para a estrutura e estilização do site.
 - **JavaScript**: responsável pela interatividade.
-- **Joomla 3.10.12**: CMS utilizado no gerenciamento de conteúdo.
 - **Fontes Google**: utilização das fontes Montserrat e Open Sans para uma tipografia amigável.
 
 ## Instalação e Uso

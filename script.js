@@ -139,3 +139,26 @@
             modal.style.display = 'none';
         }
     });
+
+    // Validação do formulário de contato
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simples validação
+            if (!name || !email || !message) {
+                event.preventDefault(); // Impede o envio do formulário
+                alert('Por favor, preencha todos os campos antes de enviar.');
+            } else {
+                // Aqui você pode adicionar mais validações se necessário
+                // Ex: verificação de formato de email
+                alert('Mensagem enviada com sucesso!'); // Mensagem de sucesso (apenas para demonstração)
+            }
+        });
+    }
+});

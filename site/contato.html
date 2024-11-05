@@ -44,7 +44,31 @@
         </div>
     </div>
             
+    <!-- Formulário de Contato -->
+    <main>
+        <section class="contact-section">
+            <h1>Entre em Contato</h1>
+            <p>Se você tiver dúvidas, sugestões ou precisar de mais informações, sinta-se à vontade para entrar em contato conosco através do formulário abaixo.</p>
+            <form action="your-server-endpoint" method="POST" class="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
 
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contact-info">
+                <h2>Informações de Contato</h2>
+                <p>Email: <a href="mailto:diretor@escolasementinha.com.br">diretor@escolasementinha.com.br</a></p>
+                <p>Telefone: <a href="tel:02126731812">021 2673 1812</a></p>
+                <p>Endereço: Rua Doutor Gastão Reis, 67, Parque Pauliceia. Duque de Caxias - RJ • CEP 25080-040</p>
+            </div>
+        </section>
+    </main>
          
     <!-- Botão do Whatsapp -->
     <a href="https://wa.me/5521969462314" class="whatsapp-button" target="_blank">
