@@ -456,3 +456,19 @@ footer {
         justify-content: center; /* Centraliza os links no footer */
     }
 }
+
+/* Estilo do marcador */
+
+.highlight {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 0 4px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.highlight:hover {
+    background-color: var(--laranja);
+    color: var(--branco);
+}
