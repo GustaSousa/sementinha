@@ -182,13 +182,13 @@ nav ul li a:hover {
 }
 
 .col-right h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
 .col-right p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 .col-right .btn-voltar {
@@ -616,4 +616,20 @@ footer {
     .footer-links {
         justify-content: center; /* Centraliza os links no footer */
     }
+}
+
+/* Estilo do marcador */
+
+.highlight {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 0 4px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.highlight:hover {
+    background-color: var(--laranja);
+    color: var(--branco);
 }
