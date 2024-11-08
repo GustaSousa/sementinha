@@ -44,7 +44,7 @@
         interval = setInterval(() => {
             currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
             showSlide(currentIndex);
-        }, 3500); // 3.5 segundos
+        }, 4500); // 4.5 segundos
     }
 
     // Para o intervalo de slides automáticos
@@ -155,9 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault(); // Impede o envio do formulário
                 alert('Por favor, preencha todos os campos antes de enviar.');
             } else {
-                // Aqui você pode adicionar mais validações se necessário
-                // Ex: verificação de formato de email
-                alert('Mensagem enviada com sucesso!'); // Mensagem de sucesso (apenas para demonstração)
+                alert('Mensagem enviada com sucesso!'); // Mensagem de sucesso
             }
         });
     }

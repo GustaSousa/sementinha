@@ -368,7 +368,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #002855;
+    background-color: var(--verde-principal);
     color: white;
     padding: 20px 0;
 }
@@ -429,6 +429,15 @@ footer {
     border-top: 1px solid #ccc;
     padding-top: 10px;
     font-size: 14px;
+}
+
+.footer-bottom p a {
+    color: inherit; /* Herdando a cor do texto branco */
+    text-decoration: none; /* Removendo o sublinhado */
+}
+
+.footer-bottom p a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 /* Responsividade para telas menores */
