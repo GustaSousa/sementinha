@@ -407,7 +407,6 @@ nav ul li a:hover {
         font-size: 15px; /* Texto um pouco menor em telas pequenas */
     }
 }
-
 /* Seção Diferenciais */
 #diferenciais {
     padding: 30px 0;
@@ -423,7 +422,8 @@ nav ul li a:hover {
 
 .section-title {
     font-size: 36px;
-    font-weight: bold;
+    font-weight: bo
+ld;
     color: #333;
     margin-bottom: 10px;
 }
@@ -446,8 +446,9 @@ nav ul li a:hover {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
-    text-decoration: none; /* Remove o sublinhado do link */
-    transition: transform 0.3s, color 0.3s; /* Transições suaves para transformações e cor */
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+    position: relative; /* Adicione esta linha para posicionamento relativo */
 }
 
 .diferencial-item h3 {
@@ -458,6 +459,16 @@ nav ul li a:hover {
 
 .diferencial-item p {
     color: #666;
+}
+
+.diferencial-item::after {
+    content: "+";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: rgba(102, 102, 102, 0.5); /* Cinza translúcido com opacidade de 50% */
+    font-weight: bold;
 }
 
 /* Estilos ao passar o mouse */
