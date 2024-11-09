@@ -1,644 +1,654 @@
-
 /* Paleta de cores */
 :root {
-    --verde-principal: #076633;
-    --verde-secundario: #0b8e36;
-    --verde-claro: #3aaa35;
-    --laranja: #F39200;
-    --azul-header-footer: #002855;
-    --azul-texto: #00467f;
-    --branco: #ffffff;
-    --cinza-claro: #f5f5f5;
-    --cinza-texto: #666666;
+  --verde-principal: #076633;
+  --verde-secundario: #0b8e36;
+  --verde-claro: #3aaa35;
+  --laranja: #f39200;
+  --azul-header-footer: #002855;
+  --azul-texto: #00467f;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-texto: #666666;
 }
 
 /* Reset de margin e padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: white;
-    margin-top: 75px;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  margin-top: 75px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* Usar Montserrat para os títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif; /* Usar Montserrat para os títulos */
 }
 
-h2{
-    color: var(--verde-principal);
+h2 {
+  color: var(--verde-principal);
 }
 
-a{
-  text-decoration: none;  
+a {
+  text-decoration: none;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-    background-color: var(--cinza-claro);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: var(--cinza-claro);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo */
 .logo img {
-    width: 220px;
+  width: 220px;
 }
 
 /* Navbar para telas grandes */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 nav ul li {
-    display: inline;
+  display: inline;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--verde-principal);
+  color: var(--verde-principal);
 }
 
 /* Menu Toggle - só aparece no mobile */
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* Overlay */
 .overlay {
-    display: none; /* Não exibe o overlay por padrão */
-    position: fixed;
-    top: 75px; /* Começa logo abaixo do header */
-    right: 0;
-    width: 60%;
-    height: calc(100% - 60px); /* 100% da altura menos o header */
-    background-color: var(--cinza-claro);
-    z-index: 9999;
-    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+  display: none; /* Não exibe o overlay por padrão */
+  position: fixed;
+  top: 75px; /* Começa logo abaixo do header */
+  right: 0;
+  width: 60%;
+  height: calc(100% - 60px); /* 100% da altura menos o header */
+  background-color: var(--cinza-claro);
+  z-index: 9999;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Menu dentro do overlay */
 .overlay-menu {
-    background-color: var(--cinza-claro);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background-color: var(--cinza-claro);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .overlay-menu-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .overlay-menu-items li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .overlay-menu-items li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Responsividade para telas menores (max-width 768px) */
 @media (max-width: 850px) {
-    nav ul {
-        display: none; /* Esconde o menu original em telas pequenas */
-    }
+  nav ul {
+    display: none; /* Esconde o menu original em telas pequenas */
+  }
 
-    .menu-toggle {
-        display: block; /* Mostra o ícone do menu em telas pequenas */
-    }
+  .menu-toggle {
+    display: block; /* Mostra o ícone do menu em telas pequenas */
+  }
 
-    .overlay.active {
-        display: block; /* Exibe o overlay apenas quando estiver ativo */
-    }
+  .overlay.active {
+    display: block; /* Exibe o overlay apenas quando estiver ativo */
+  }
 
-    /* Corrige o layout para que o banner comece logo abaixo do header */
-    .banner {
-        margin-top: 80px; /* Ajusta o conteúdo para começar após o header */
-    }
+  /* Corrige o layout para que o banner comece logo abaixo do header */
+  .banner {
+    margin-top: 80px; /* Ajusta o conteúdo para começar após o header */
+  }
 }
 
 /* Para telas maiores (desktop), o overlay é sempre oculto */
 @media (min-width: 769px) {
-    .overlay {
-        display: none; /* Certifica-se que o overlay está sempre escondido */
-    }
+  .overlay {
+    display: none; /* Certifica-se que o overlay está sempre escondido */
+  }
 }
 
 /* Diferencial */
 #diferencial {
-    padding: 40px 20px;
-    background-color: var(--cinza-claro); /* Cor de fundo para diferenciar */
+  padding: 40px 20px;
+  background-color: var(--cinza-claro); /* Cor de fundo para diferenciar */
 }
 
 #diferencial .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 #diferencial .row {
-    display: flex;
-    justify-content: space-between; /* Alinha a imagem à direita e o conteúdo à esquerda */
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between; /* Alinha a imagem à direita e o conteúdo à esquerda */
+  align-items: center;
+  gap: 20px;
 }
 
 /* Coluna direita (texto) */
 .col-right {
-    flex: 1;
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
 .col-right h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .col-right p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .col-right .btn-voltar {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--laranja);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--laranja);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 .col-right .btn-voltar:hover {
-    background-color: var(--verde-secundario);
+  background-color: var(--verde-secundario);
 }
 
 /* Coluna esquerda (imagem) */
 .col-left {
-    flex: 1;
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
 .col-left img {
-    width: 100%; /* Faz a imagem ocupar toda a largura disponível na coluna */
-    max-width: 400px; /* Limita o tamanho máximo da imagem */
-    border-radius: 10px;
-    margin-left: 20px; /* Adiciona espaçamento à esquerda da imagem */
+  width: 100%; /* Faz a imagem ocupar toda a largura disponível na coluna */
+  max-width: 400px; /* Limita o tamanho máximo da imagem */
+  border-radius: 10px;
+  margin-left: 20px; /* Adiciona espaçamento à esquerda da imagem */
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
-    #diferencial .row {
-        flex-direction: column; /* Alinha a imagem e conteúdo verticalmente */
-        text-align: center;
-    }
+  #diferencial .row {
+    flex-direction: column; /* Alinha a imagem e conteúdo verticalmente */
+    text-align: center;
+  }
 
-    .col-left img {
-        max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
-        margin: 0;
-    }
+  .col-left img {
+    max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    margin: 0;
+  }
 
-    .col-right {
-        text-align: center;
-    }
+  .col-right {
+    text-align: center;
+  }
 
-    .col-right h2 {
-        font-size: 1.8rem;
-    }
+  .col-right h2 {
+    font-size: 1.8rem;
+  }
 
-    .col-right p {
-        font-size: 1rem;
-    }
+  .col-right p {
+    font-size: 1rem;
+  }
 }
 
 /* Instalações */
 
 .galeria {
-    padding: 25px;
-    text-align: center;
+  padding: 25px;
+  text-align: center;
 }
 
-.galeria h1, h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.galeria h1,
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.galeria p{
-    font-size: 1.2rem;
-    margin-bottom: 200px;
+.galeria p {
+  font-size: 1.2rem;
+  margin-bottom: 200px;
 }
 
 .galeria-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
 }
 
 .galeria-item {
-    width: 100%;
-    height: 200px; /* Define uma altura fixa para as imagens */
-    object-fit: cover; /* Garante que a imagem preencha o espaço e mantenha a proporção */
-    cursor: pointer;
-    transition: transform 0.3s;
+  width: 100%;
+  height: 200px; /* Define uma altura fixa para as imagens */
+  object-fit: cover; /* Garante que a imagem preencha o espaço e mantenha a proporção */
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .galeria-item:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 80%;
+  max-width: 90%;
+  max-height: 80%;
 }
 
 .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
+  .galeria h2 {
+    font-size: 1.8rem;
+  }
 
-    .galeria h2 {
-        font-size: 1.8rem;
-    }
-
-    .galeria p {
-        font-size: 1rem;
-    }
+  .galeria p {
+    font-size: 1rem;
+  }
 }
 
 /* projetos */
 .projetos {
-    padding: 25px;
-    text-align: center;
+  padding: 25px;
+  text-align: center;
 }
 
-.projetos h1, h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.projetos h1,
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.projetos p{
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.projetos p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .projetos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
 }
 
 .projetos-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .projetos-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: opacity 0.3s;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s;
 }
 
 .projetos-item h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: rgba(0, 128, 0, 0.7); /* Fundo verde com transparência */
-    margin: 0;
-    z-index: 2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.7); /* Fundo verde com transparência */
+  margin: 0;
+  z-index: 2;
 }
 
 .projetos-item a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .projetos-item:hover img {
-    opacity: 0.8; /* Escurece levemente a imagem no hover */
+  opacity: 0.8; /* Escurece levemente a imagem no hover */
 }
 
 .projetos-item:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 80%;
+  max-width: 90%;
+  max-height: 80%;
 }
 
 .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
+  .projetos h2 {
+    font-size: 1.8rem;
+  }
 
-    .projetos h2 {
-        font-size: 1.8rem;
-    }
-
-    .projetos p {
-        font-size: 1rem;
-    }
+  .projetos p {
+    font-size: 1rem;
+  }
 }
 
 /* CONTATO */
 /* Estilos para a seção de contato */
 .contact-section {
-    max-width: 800px;
-    margin: 2rem auto;
-    margin-top: 100px;
-    padding: 1.5rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  margin-top: 100px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-section h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--verde-secundario); /* Cor verde para o título */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--verde-secundario); /* Cor verde para o título */
 }
 
 .contact-section p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
 }
 
 .contact-form button {
-    padding: 0.8rem;
-    background-color: var(--verde-secundario); /* Cor verde para o botão */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
+  padding: 0.8rem;
+  background-color: var(--verde-secundario); /* Cor verde para o botão */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .contact-form button:hover {
-    background-color: var(--verde-principal); /* Cor verde mais escura para o hover */
+  background-color: var(
+    --verde-principal
+  ); /* Cor verde mais escura para o hover */
 }
 
 .contact-info {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .contact-info h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--verde-secundario); /* Cor verde para o título */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--verde-secundario); /* Cor verde para o título */
 }
 
 .contact-info p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #333;
 }
 
 .contact-info a {
-    color: var(--verde-claro);
-    text-decoration: none;
+  color: var(--verde-claro);
+  text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* WHATSAPP BUTTON */
 
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .whatsapp-button img {
-    width: 90px;
-    height: 90px;
-    transition: transform 0.3s ease; /* Usa transformação para um aumento uniforme */
+  width: 90px;
+  height: 90px;
+  transition: transform 0.3s ease; /* Usa transformação para um aumento uniforme */
 }
 
 .whatsapp-button img:hover {
-    transform: scale(1.22); /* Aumenta o tamanho proporcionalmente em 22% */
+  transform: scale(1.22); /* Aumenta o tamanho proporcionalmente em 22% */
 }
 
 footer {
-    background-color: var(--verde-principal);
-    color: white;
-    padding: 20px 0;
+  background-color: var(--verde-principal);
+  color: white;
+  padding: 20px 0;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between; /* Espaça igualmente os elementos nas laterais */
-    align-items: center; /* Centraliza verticalmente */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
-    position: relative;
+  display: flex;
+  justify-content: space-between; /* Espaça igualmente os elementos nas laterais */
+  align-items: center; /* Centraliza verticalmente */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  position: relative;
 }
 
-.footer-links, .footer-socials {
-    flex: 1; /* Cada um ocupa o mesmo espaço nas laterais */
+.footer-links,
+.footer-socials {
+  flex: 1; /* Cada um ocupa o mesmo espaço nas laterais */
 }
 
 .footer-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Garante a centralização exata da logo */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Garante a centralização exata da logo */
 }
 
 .footer-logo img {
-    max-width: 150px; /* Limita o tamanho da logo */
+  max-width: 150px; /* Limita o tamanho da logo */
 }
 
-.footer-links ul, .footer-socials ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.footer-links ul,
+.footer-socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links ul li, .footer-socials ul li {
-    margin-bottom: 10px;
+.footer-links ul li,
+.footer-socials ul li {
+  margin-bottom: 10px;
 }
 
-.footer-links ul li a, .footer-socials ul li a img {
-    color: white;
-    text-decoration: none;
+.footer-links ul li a,
+.footer-socials ul li a img {
+  color: white;
+  text-decoration: none;
 }
 
 .footer-socials ul {
-    display: flex;
-    justify-content: flex-end; /* Alinha os ícones sociais à direita */
-    gap: 15px; /* Espaço entre os ícones sociais */
+  display: flex;
+  justify-content: flex-end; /* Alinha os ícones sociais à direita */
+  gap: 15px; /* Espaço entre os ícones sociais */
 }
 
 .footer-socials ul li a img {
-    width: 30px;
+  width: 30px;
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 14px;
 }
 
 .footer-bottom p a {
-    color: inherit; /* Herdando a cor do texto branco */
-    text-decoration: none; /* Removendo o sublinhado */
+  color: inherit; /* Herdando a cor do texto branco */
+  text-decoration: none; /* Removendo o sublinhado */
 }
 
 .footer-bottom p a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column; /* Muda a direção para coluna */
-        align-items: center; /* Centraliza todos os elementos */
-        gap: 20px; /* Espaço entre os elementos do footer */
-    }
+  .footer-container {
+    flex-direction: column; /* Muda a direção para coluna */
+    align-items: center; /* Centraliza todos os elementos */
+    gap: 20px; /* Espaço entre os elementos do footer */
+  }
 
-    .footer-logo {
-        position: static; /* Remove o posicionamento absoluto */
-        transform: none; /* Remove a transformação */
-        margin-bottom: 20px; /* Adiciona espaço abaixo da logo */
-    }
+  .footer-logo {
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove a transformação */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da logo */
+  }
 
-    .footer-socials {
-        margin-top: 0; /* Adiciona espaçamento superior */
-    }
+  .footer-socials {
+    margin-top: 0; /* Adiciona espaçamento superior */
+  }
 
-    .footer-socials ul {
-        justify-content: center; /* Centraliza os ícones sociais */
-    }
+  .footer-socials ul {
+    justify-content: center; /* Centraliza os ícones sociais */
+  }
 
-    .footer-links {
-        justify-content: center; /* Centraliza os links no footer */
-    }
+  .footer-links {
+    justify-content: center; /* Centraliza os links no footer */
+  }
 }
 
 /* Estilo do marcador */
 
 .highlight {
-    background-color: var(--verde-claro);
-    color: var(--branco);
-    padding: 0 4px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--verde-claro);
+  color: var(--branco);
+  padding: 0 4px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Efeito ao passar o mouse */
 .highlight:hover {
-    background-color: var(--laranja);
-    color: var(--branco);
+  background-color: var(--laranja);
+  color: var(--branco);
 }
