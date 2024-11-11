@@ -19,7 +19,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
 //BANER
 const slides = document.querySelectorAll(".carousel-item");
 const dots = document.querySelectorAll(".dot");
@@ -83,7 +82,6 @@ dots.forEach((dot, index) => {
   });
 });
 
-
 // ANIMAÇÃO DOS NÚMEROS
 function animateNumbers() {
   const numbers = document.querySelectorAll(".stat-number");
@@ -124,7 +122,6 @@ const observer = new IntersectionObserver(
 // Adiciona o observer à seção
 const section = document.querySelector("#voce-sabia");
 observer.observe(section);
-
 
 //INSTALASÇOES
 const modal = document.getElementById("modal");
