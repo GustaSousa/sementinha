@@ -220,54 +220,6 @@ nav ul li a:hover {
   object-fit: cover; /* Faz a imagem preencher o container do banner */
 }
 
-/* Estilos gerais para o banner */
-.banner {
-  position: relative;
-  text-align: center;
-  background-color: #2d71b8;
-  color: white;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 75px;
-}
-
-/* Estilos para o container do carousel */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  height: 390px; /* Altura fixa para desktop */
-  max-width: 100%; /* Garantir que a largura ocupe 100% */
-}
-
-/* Estilos para os itens do carousel */
-.carousel-item {
-  display: none;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-item.active {
-  display: block;
-  opacity: 1;
-}
-
-/* Estilos para as imagens dentro do carousel */
-.carousel img,
-.carousel picture {
-  position: absolute; /* Alinha a imagem de forma absoluta */
-  top: 50%; /* Alinha ao centro verticalmente */
-  left: 50%; /* Alinha ao centro horizontalmente */
-  min-width: 100%; /* Garante que a largura mínima seja 100% */
-  min-height: 100%; /* Garante que a altura mínima seja 100% */
-  width: auto; /* Permite que a largura seja ajustada */
-  height: auto; /* Permite que a altura seja ajustada */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Centraliza a imagem no meio do container */
-  object-fit: cover; /* Faz a imagem preencher o container do banner */
-}
-
 /* Estilos para os controles do carousel */
 .carousel-controls {
   position: absolute;
@@ -284,11 +236,15 @@ nav ul li a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
-  padding: 10px;
+  width: 50px; /* Define a largura do botão */
+  height: 50px; /* Define a altura do botão igual à largura para torná-lo uma bola */
   cursor: pointer;
   font-size: 1.5rem;
-  border-radius: 50%;
+  border-radius: 50%; /* Garante o formato circular */
   transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-controls button:hover {
