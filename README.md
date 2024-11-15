@@ -1,37 +1,40 @@
-# Sementinha Escola e Creche
+# Sementinha Escola e Creche - Site Institucional
 
-Bem-vindo ao repositório do site da **Escola e Creche Sementinha**. Este projeto é voltado para apresentar as atividades, serviços, instalações, e informações da escola e creche de forma intuitiva e amigável.
+Este repositório contém o código-fonte do site institucional da **Sementinha Escola e Creche**, desenvolvido para oferecer informações sobre nossos serviços, diferenciais e infraestrutura em uma plataforma moderna e responsiva.
 
 ## Índice
 
 - [Visão Geral](#visão-geral)
-- [Funcionalidades](#funcionalidades)
+- [Principais Recursos](#principais-recursos)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação e Uso](#instalação-e-uso)
-- [Contribuição](#contribuição)
-- [Contato](#contato)
+- [Licença](#licança)
 
 ## Visão Geral
 
-O site **Sementinha** foi desenvolvido para ser o principal meio de comunicação online com pais e responsáveis, mostrando de maneira clara e dinâmica o ambiente acolhedor, seguro e educacional oferecido pela escola e creche.
+O site apresenta uma estrutura de navegação intuitiva, com seções sobre nossa missão, valores, serviços educacionais, galeria de imagens, diferenciais e contato.
 
-## Funcionalidades
+### Principais Recursos
 
-- **Apresentação Institucional**: informações sobre a escola, sua missão e valores.
-- **Atividades Extracurriculares**: detalhes sobre atividades como ballet, futsal e piscina.
-- **Atividades Acadêmicas**: inclusão de informática, programa bilíngue, e robótica.
-- **Período Integral**: estrutura voltada para o acolhimento e desenvolvimento integral da criança.
-- **Contato Direto**: botões de contato rápido via WhatsApp e links para redes sociais.
+- **Interface Responsiva**: Adaptável a dispositivos móveis, tablets e desktops.
+- **Galeria de Fotos**: Imagens ampliáveis e organizadas para visualização.
+- **Design Clean e Moderno**: Visual agradável e funcional, com destaque aos serviços e diferenciais.
+- **Página de Diferenciais**: Expõe os principais serviços educacionais da escola de maneira clara.
 
 ## Tecnologias Utilizadas
 
-- **HTML5** e **CSS3**: para a estrutura e estilização do site.
-- **JavaScript**: responsável pela interatividade.
-- **Fontes Google**: utilização das fontes Montserrat e Open Sans para uma tipografia amigável.
+- **HTML5 & CSS3**: Estrutura e design.
+- **JavaScript**: Funcionalidades interativas.
+- **Ngrok**: Utilizado para disponibilizar o site em desenvolvimento.
 
 ## Instalação e Uso
 
 1. Clone este repositório:
+
    ```bash
-   git clone git@github.com:GustaSousa/sementinha.git
-   ```
+   git clone https://github.com/GustaSousa/sementinha.git
+
+## Licença
+
+Este projeto é de uso interno e está sujeito às políticas de uso da Sementinha Escola e Creche.
+Sinta-se à vontade para ajustar detalhes específicos ou acrescentar informações extras conforme necessário.
