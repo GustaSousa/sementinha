@@ -169,25 +169,14 @@ nav ul li a:hover {
   color: white;
   padding: 0;
   margin-bottom: 0;
-  margin-top: 75px;
-}
-
-/* Estilos gerais para o banner */
-.banner {
-  position: relative;
-  text-align: center;
-  background-color: #2d71b8;
-  color: white;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 75px;
+  margin-top: 55px;
 }
 
 /* Estilos para o container do carousel */
 .carousel {
   position: relative;
   overflow: hidden;
-  height: 390px; /* Altura fixa para desktop */
+  height: 435px; /* Altura fixa para desktop */
   max-width: 100%; /* Garantir que a largura ocupe 100% */
 }
 
