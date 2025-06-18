@@ -134,6 +134,56 @@
         </div>
     </section>
 
+        <!-- Modal exclusivo para a página de projetos -->
+    <div class="modal-projetos hidden" id="modal-projetos">
+        <img class="modal-content-projetos" id="modal-img-projetos">
+    </div>
+    <style>
+        .modal-projetos {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+        }
+
+        .modal-projetos.hidden {
+            display: none;
+        }
+
+        .modal-content-projetos {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            transition: transform 0.3s;
+        }
+
+        .modal-content-projetos:hover {
+            transform: scale(1.02);
+        }
+    </style>
+    <script>
+        const imagens = document.querySelectorAll('.projetos-item img'); // Se suas imagens têm essa classe
+        const modal = document.getElementById('modal-projetos');
+        const modalImg = document.getElementById('modal-img-projetos');
+
+        imagens.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+
     <!-- Botão do Whatsapp -->
     <a href="https://wa.me/5521969462314" class="whatsapp-button" target="_blank">
         <img src="/images/logos/whatsapp-icon.png" alt="WhatsApp" />
