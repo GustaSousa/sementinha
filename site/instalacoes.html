@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script defer src="/script.js"></script>
+    <script defer src="/site/modal-instalacoes.js"></script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
@@ -104,21 +105,23 @@
         }
     </style>
     <script>
-        const imagens = document.querySelectorAll('.galeria-item');
-        const modal = document.getElementById('modal-instalacoes');
-        const modalImg = document.getElementById('modal-img-instalacoes');
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagens = document.querySelectorAll('.galeria-item');
+            const modal = document.getElementById('modal-instalacoes');
+            const modalImg = document.getElementById('modal-img-instalacoes');
 
-        imagens.forEach(img => {
-            img.addEventListener('click', () => {
-                modalImg.src = img.src;
-                modal.classList.remove('hidden');
+            imagens.forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImg.src = img.src;
+                    modal.classList.remove('hidden');
+                });
             });
-        });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-            }
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
         });
     </script>
 
