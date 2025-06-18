@@ -54,32 +54,73 @@
         <section class="galeria">
             <h2>Instalações</h2>
             <div class="galeria-container">
-                <img src="/images/instalacoes/parquinho.jpeg" alt="Foto dos brinquedos da Escola" class="galeria-item">
-            <!--<img src="/images/instalacoes/brinquedo.jpeg" alt="Foto dos brinquedos da Escola" class="galeria-item">-->
-                <img src="/images/instalacoes/quadra.jpeg" alt="Foto da quadra da Escola" class="galeria-item">
-                <img src="/images/instalacoes/piscina2.JPG" alt="Foto da piscina da Escola" class="galeria-item">
-                <img src="/images/instalacoes/brinquedo2.JPG" alt="Foto dos brinquedos da Escola" class="galeria-item">
-                <img src="/images/instalacoes/quadra2.jpeg" alt="Foto da quadra de Escola" class="galeria-item">
-                <img src="/images/instalacoes/piscina.JPG" alt="Foto da piscina da Escola" class="galeria-item">
-                <img src="/images/instalacoes/brinquedo4.JPG" alt="Foto dos brinquedos da escola" class="galeria-item">
-                <img src="/images/instalacoes/salao.JPG" alt="Foto do patio da Escola" class="galeria-item">
-                <img src="/images/instalacoes/sala2.JPG" alt="Foto da sala de Escola" class="galeria-item">
-                <img src="/images/instalacoes/quadra4.JPG" alt="Foto da quadra de Escola" class="galeria-item">
-                <img src="/images/instalacoes/informatica.JPG" alt="Foto da sala de informatica" class="galeria-item">
-                <img src="/images/instalacoes/quadra3.JPG" alt="Foto da quadra de Escola" class="galeria-item">
-                <img src="/images/instalacoes/brinquedo3.JPG" alt="Foto dos brinquedos da escola" class="galeria-item">
-                <img src="/images/instalacoes/brinquedo5.JPG" alt="Foto dos brinquedos da escola" class="galeria-item">
-                <img src="/images/instalacoes/brinquedo6.JPG" alt="Foto dos brinquedos da escola" class="galeria-item">
+                <img src="/images/instalacoes/parquinho.jpeg" alt="Foto dos brinquedos da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/quadra.jpeg" alt="Foto da quadra da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/piscina2.JPG" alt="Foto da piscina da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/brinquedo2.JPG" alt="Foto dos brinquedos da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/quadra2.jpeg" alt="Foto da quadra de Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/piscina.JPG" alt="Foto da piscina da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/brinquedo4.JPG" alt="Foto dos brinquedos da escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/salao.JPG" alt="Foto do patio da Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/sala2.JPG" alt="Foto da sala de Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/quadra4.JPG" alt="Foto da quadra de Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/informatica.JPG" alt="Foto da sala de informatica" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/quadra3.JPG" alt="Foto da quadra de Escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/brinquedo3.JPG" alt="Foto dos brinquedos da escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/brinquedo5.JPG" alt="Foto dos brinquedos da escola" class="galeria-item" loading="lazy">
+                <img src="/images/instalacoes/brinquedo6.JPG" alt="Foto dos brinquedos da escola" class="galeria-item" loading="lazy">
             </div>
         </section>
     </main>
-
-    <!-- Modal para ampliar as imagens -->
-    <div class="modal" id="modal">
-        <span class="close" id="close">&times;</span>
-        <img class="modal-content" id="modal-image">
+    <!-- Modal exclusivo para a página de instalações -->
+    <div class="modal-instalacoes hidden" id="modal-instalacoes">
+        <img class="modal-content-instalacoes" id="modal-img-instalacoes">
     </div>
-    <script src="/script.js"></script>
+    <style>
+        .modal-instalacoes {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+        }
+
+        .modal-instalacoes.hidden {
+            display: none;
+        }
+
+        .modal-content-instalacoes {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            transition: transform 0.3s;
+        }
+
+        .modal-content-instalacoes:hover {
+            transform: scale(1.02);
+        }
+    </style>
+    <script>
+        const imagens = document.querySelectorAll('.galeria-item');
+        const modal = document.getElementById('modal-instalacoes');
+        const modalImg = document.getElementById('modal-img-instalacoes');
+
+        imagens.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
 
     <!-- Botão do Whatsapp -->
     <a href="https://wa.me/5521969462314" class="whatsapp-button" target="_blank">
